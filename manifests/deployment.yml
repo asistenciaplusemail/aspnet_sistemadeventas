@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: asistenciaplusemailaspnetsistemadeventas 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: asistenciaplusemailaspnetsistemadeventas
+  template:
+    metadata:
+      labels:
+        app: asistenciaplusemailaspnetsistemadeventas 
+    spec:
+      containers:
+        - name: asistenciaplusemailaspnetsistemadeventas 
+          image: registrodecotenedores.azurecr.io/asistenciaplusemailaspnetsistemadeventas
+          ports:
+          - containerPort: 62410
