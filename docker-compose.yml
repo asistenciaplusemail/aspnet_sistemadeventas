@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  sistemaventas:
+    image: ${DOCKER_REGISTRY-}sistemaventas
+    build:
+      context: .\SistemaVentas
+      dockerfile: Dockerfile
