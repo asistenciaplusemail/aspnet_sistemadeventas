@@ -22,7 +22,7 @@ variables:
   imagePullSecret: 'registrodecotenedores1874ab4c-auth'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  vmImageName: 'windows-latest'
 
 
 
