@@ -4,4 +4,15 @@
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
 ARG source
 WORKDIR /inetpub/wwwroot
+# Copy everything
+COPY . ./
+# Restore as distinct layers
+RUN dotnet restore
+# Build and publish a release
+RUN dotnet publish -c Release -o out
+
+
+FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
+ARG source
+WORKDIR /inetpub/wwwroot
 COPY ${source:-obj/Docker/publish} .
